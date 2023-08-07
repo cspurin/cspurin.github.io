@@ -1,32 +1,52 @@
 <html>
-<!-- Why are you still so nosy? -->
-<link rel="stylesheet" href="/static/internal_style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src = /static/script.js ></script>
+<!-- why are you so nosy? -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+
 <head>
     <title>Catherine Spurin</title>
 </head>
 
-<body>
-<div id="navbar">
-    <div class = "navigation" >
-        <a class="navitem" href="/">Home</a>
-        <a class="navitem" href="/eventdetails">CV </a>
-        <!--<a class="navitem" href="/rsvp">RSVP</a>-->
-        <!--<a class="navitem" href="/menu">Menu</a>-->
-        <a class="navitem" href="/accommodation">Papers</a>
-        <a class="navitem" href="/gifts">Other</a>
-        
-        <a class="navitem" href="/logout">Log Out</a>
-        <a class="icon" href="javascript:void(0);" onclick="hamburger_nav()">
-            <i class="fa fa-bars"></i>
-        </a>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXFSCXBT0Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VXFSCXBT0Z');
+</script>
+
+<body class="bg-gray-50">
+    <div class="bg-purple-800 text-white text-lg">
+        <button class="p-4 bg-purple-600 hover:bg-purple-600" onclick="window.location.href='index.html'">
+            About
+        </button>
+        <button class="p-4 hover:bg-purple-600" onclick="window.location.href='cv.html'">
+            CV
+        </button>
+        <button class="p-4 hover:bg-purple-600" onclick="window.location.href='publications.html'">
+            Publications
+        </button>
     </div>
-</div>
-
-
-
-</div>
+    <div class="grid grid-cols-6">
+        <div class="col-span-2 m-10 flex justify-center">
+            <div class="w-80 h-80 shadow-lg"><img src="linkedin_pic.jpeg" class="w-full h-full rounded-lg"></div>
+            <!-- <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                Stanford, Palo Alto, United States
+            </div> -->
+        </div>
+        <div class="col-span-4 py-10 max-w-xl">
+            I am a postdoctoral researcher at Stanford University in the Energy Science &
+            Engineering department. My research interests include multiphase flow in porous media and geological CO2
+            storage.
+        </div>
+    </div>
 </body>
+
 </html>
