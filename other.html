@@ -9,11 +9,11 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXFSCXBT0Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-VXFSCXBT0Z');
+    gtag('config', 'G-VXFSCXBT0Z');
 </script>
 
 <body class="bg-gray-50">
@@ -28,31 +28,56 @@
             CV
         </button>
         <button class="p-4 hover:bg-purple-600" onclick="window.location.href='other.html'">
-            Other 
+            Other
         </button>
     </div>
     <div class="grid grid-cols-6 ">
         <div class="col-span-2 m-10 flex justify-center">
             <div class="w-80 h-80 shadow-lg"><img src="linkedin_pic.jpeg" class="w-full h-full rounded-lg">
                 <a>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-                <span>Stanford, Palo Alto, United States</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    <span>Stanford, Palo Alto, United States</span>
                 </a>
             </div>
         </div>
         <div class="col-span-4 py-20 max-w-xl">
-            <p>Porous Media Tea Time Talks<div class="w-80 h-80 shadow-lg"><img src="pmttt_logo.jpeg" class="w-full h-full rounded-lg"> </div> </p> <br>
+            <p>Porous Media Tea Time Talks
+            <div class="w-80 h-80 shadow-lg"><img src="pmttt_logo.jpeg" class="w-full h-full rounded-lg"> </div>
+            </p> <br>
 
             <p>YouTube videos </p>
+            <div id="player"></div>
         </div>
     </div>
-
-
 </body>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: 'h-wduQ552io',
+            playerVars: {
+                autoplay: 1,
+                mute: 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo(); // This will attempt to start the video
+    }
+</script>
+
 
 </html>
