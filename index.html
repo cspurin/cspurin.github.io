@@ -5,18 +5,52 @@
 
 <head>
     <title>Catherine Spurin</title>
+
+    <!-- custom cursor -->
+    <style>
+        body {
+            cursor: none;
+            /* Hide the default cursor */
+        }
+
+        #custom-cursor {
+            position: absolute;
+            z-index: 9999;
+            pointer-events: none;
+            width: 48px;
+            /* You can adjust the size */
+            height: 48px;
+            /* You can adjust the size */
+            left: -100px;
+            /* Initially position off-screen */
+        }
+    </style>
 </head>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXFSCXBT0Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-VXFSCXBT0Z');
+    gtag('config', 'G-VXFSCXBT0Z');
 </script>
 
-<body class="bg-gray-50">
+<body class="bg-gray-50 h-full">
+    <!-- custom cursor -->
+    <img src="cursor.gif" id="custom-cursor" />
+
+    <!-- mobile overlay -->
+    <div id="mobile-overlay"
+        class="fixed inset-0 bg-purple-100 text-purple-900 p-16 flex flex-col justify-center items-center md:hidden space-y-4">
+        <p class="text-center mb-4">
+            This website isn't built for mobile 🙈
+        </p>
+        <p class="text-center mb-4">
+            Please view this on a bigger screen!
+        </p>
+    </div>
+
     <div class="bg-purple-800 text-white text-lg">
         <button class="p-4 bg-purple-600 hover:bg-purple-600" onclick="window.location.href='index.html'">
             About
@@ -28,33 +62,64 @@
             CV
         </button>
         <button class="p-4 hover:bg-purple-600" onclick="window.location.href='other.html'">
-            Other 
+            Other
         </button>
     </div>
+
     <div class="grid grid-cols-6 ">
-        <div class="col-span-2 m-10 flex justify-center">
-            <div class="w-80 h-80 shadow-lg"><img src="linkedin_pic.jpeg" class="w-full h-full rounded-lg">
-                <a>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-                <span>Stanford, Palo Alto, United States</span>
-                </a>
+        <div class="col-span-2 m-10 flex justify-center flex flex-col">
+            <div class="w-80 h-80 shadow-lg">
+                <img src="linkedin_pic.jpeg" class="w-full h-full rounded-lg">
+            </div>
+            <div class="space-y-4 my-4">
+                <div class="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd"
+                            d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>Stanford, Palo Alto, United States</span>
+                </div>
+                <div class="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd"
+                            d="M19.902 4.098a3.75 3.75 0 00-5.304 0l-4.5 4.5a3.75 3.75 0 001.035 6.037.75.75 0 01-.646 1.353 5.25 5.25 0 01-1.449-8.45l4.5-4.5a5.25 5.25 0 117.424 7.424l-1.757 1.757a.75.75 0 11-1.06-1.06l1.757-1.757a3.75 3.75 0 000-5.304zm-7.389 4.267a.75.75 0 011-.353 5.25 5.25 0 011.449 8.45l-4.5 4.5a5.25 5.25 0 11-7.424-7.424l1.757-1.757a.75.75 0 111.06 1.06l-1.757 1.757a3.75 3.75 0 105.304 5.304l4.5-4.5a3.75 3.75 0 00-1.035-6.037.75.75 0 01-.354-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <a href="https://www.linkedin.com/in/catherine-spurin-39404a87"
+                        class="hover:underline text-blue-700">LinkedIn</a>
+                </div>
+                <div class="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd"
+                            d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm14.25 6a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L15.44 12l-1.72-1.72a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm-10.28-.53a.75.75 0 000 1.06l2.25 2.25a.75.75 0 101.06-1.06L8.56 12l1.72-1.72a.75.75 0 10-1.06-1.06l-2.25 2.25z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <a href="https://www.github.com/cspurin" class="hover:underline text-blue-700">GitHub</a>
+                </div>
             </div>
         </div>
         <div class="col-span-4 py-20 max-w-xl">
             <p>I am a postdoctoral researcher at Stanford University in the Energy Science &
-            Engineering department. My research interests include multiphase flow in porous media and geological CO2
-            storage. </p> <br>
+                Engineering department. My research interests include multiphase flow in porous media and geological CO2
+                storage. </p> <br>
 
-            <p>I completed my PhD at Imperial College London in 2021, under the supervision of Samuel Krevor and Martin Blunt. </p>
+            <p>I completed my PhD at Imperial College London in 2021, under the supervision of Samuel Krevor and Martin
+                Blunt. </p>
         </div>
     </div>
-
-
 </body>
+
+<!-- custom cursor -->
+<script>
+    var customCursor = document.getElementById('custom-cursor');
+
+    document.addEventListener('mousemove', function (e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        customCursor.style.left = x + 'px';
+        customCursor.style.top = y + 'px';
+    });
+</script>
 
 </html>
