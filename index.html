@@ -14,7 +14,7 @@
         }
 
         #custom-cursor {
-            position: absolute;
+            position: fixed;
             z-index: 9999;
             pointer-events: none;
             width: 48px;
@@ -53,7 +53,7 @@
 
     <div class="bg-purple-800 text-white text-lg">
         <button class="p-4 bg-purple-600 hover:bg-purple-600" onclick="window.location.href='index.html'">
-            About
+            Home
         </button>
         <button class="p-4 hover:bg-purple-600" onclick="window.location.href='publications.html'">
             Publications
@@ -61,20 +61,18 @@
         <button class="p-4 hover:bg-purple-600" onclick="window.location.href='cv.html'">
             CV
         </button>
-        <button class="p-4 hover:bg-purple-600" onclick="window.location.href='other.html'">
-            Other
-        </button>
-        <button class="p-4 hover:bg-purple-600" onclick="window.location.href='pressure.html'">
-            Pressure from CRC 3
-        </button>
     </div>
 
-    <div class="grid grid-cols-6 ">
-        <div class="col-span-2 m-10 flex justify-center flex flex-col">
-            <div class="w-80 h-80 shadow-lg">
-                <img src="linkedin_pic.jpeg" class="w-full h-full rounded-lg">
+    <div class="grid grid-cols-2 ">
+        <div class="col-span-1 m-10 flex justify-self-end flex flex-col">
+            <div class="w-60 h-60 shadow-full">
+                <img src="headshot_spurin.jpg" class="w-full h-full rounded-full">
             </div>
-            <div class="space-y-4 my-4">
+        </div>
+        <div class="col-span-1 py-20 max-w-xl">
+            <h1 class="font-bold text-3xl">Catherine Spurin</h1>
+            <p class="italic">Postdoctoral researcher at Stanford University </p>
+            <div class="space-y-4 my-2">
                 <div class="flex flex-row space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd"
@@ -102,18 +100,227 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-4 py-20 max-w-xl">
-            <p>I am a postdoctoral researcher at Stanford University in the Energy Science &
-                Engineering department. My research interests include multiphase flow in porous media and geological CO2
-                storage. </p> <br>
+    </div>
 
-            <p>I completed my PhD at Imperial College London in 2021, under the supervision of Samuel Krevor and Martin
-                Blunt. </p>
+    
+    <div>
+        <div class="m-10 max-w-5xl">
+            <h1 class="font-bold text-2xl">About me</h1> <br>
+            <div class="relative">
+                <div class="border-r-2 border-gray-400 absolute h-full top-0 left-2"></div>
+                <ul class="list-none m-0 p-0">
+                  <li class="mb-8">
+                      <div class="bg-gray-400 rounded-full h-4 w-4 flex items-center justify-center">
+                      </div>
+                      <div class="ml-4">
+                        <h2 class="font-semibold">2021 - present</h2>
+                        </div>
+                        <div class="ml-5 py-4 flex items-center">
+                        <img src="stanford_logo.png" alt="Stanford Logo" class="h-20 w-20 ">
+                        <p class="ml-24"> My current research is focused on understanding how subsurface heterogeneity can be exploited to increase the amount of 
+                        CO<sub class="subscript">2</sub> that is residually trapped. This increases storage security and minimizes the spread of the 
+                        CO<sub class="subscript">2</sub> plume.
+                        This research makes up part of the GeoCquest consortium with Melbourne University and Cambridge University. 
+                        My supervisors are Prof. Hamdi Tchelepi and Prof. Sally Benson. </p>
+                        </div>
+                  </li>
+                  
+                  <li class="mb-8">
+                    <div class="bg-gray-400 rounded-full h-4 w-4 flex items-center justify-center">
+                    </div>
+                    <div class="ml-4">
+                      <h2 class="font-semibold">2017 - 2021 </h2>
+                      </div>
+                      <div class="ml-5 py-4 flex items-center">
+                      <img src="imperial_logo.jpg" alt="Imperial Logo" class="h-10 w-15">
+                      <p class="ml-6">My PhD thesis "Intermittent flow pathways for multiphase flow in porous media: a pore-scale perspective" explored how flow phenomena
+                        not included in the framework of Darcy's law extended to multiphase flow influence the propagation and trapping of fluids. My supervisors were Prof. Sam Krevor and Prof. Martin Blunt. 
+                        My research was funded by the President's PhD scholarship at Imperial. 
+                      </p>
+                      </div>
+                    </li>
+
+                <li class="mb-8">
+                    <div class="bg-gray-400 rounded-full h-4 w-4 flex items-center justify-center">
+                    </div>
+                    <div class="ml-4">
+                      <h2 class="font-semibold">2013 - 2017</h2>
+                      </div>
+                      <div class="ml-5 py-4 flex items-center">
+                      <img src="imperial_logo.jpg" alt="Imperial Logo" class="h-10 w-15 ">
+                      <p class="ml-6">MSci in Geophysics at Imperial College London. My thesis explored gravity fingering in mixed wet 3D porous media. My supervisor was
+                        Prof. Martin Blunt. The experiments for this research were conducted at MIT under the supervison of Prof. Ruben Juanes. 
+                      </p>
+                      </div>
+                </li>
+
+                </ul>
+              </div>
         </div>
     </div>
+
+    <div>
+        <div class="m-10 max-w-5xl">
+            <h1 class="font-bold text-2xl">Featured Publications</h1> <br>
+            <p>A full list of my publications is <a href="https://scholar.google.com/citations?user=cvDnj2YAAAAJ&hl=en&oi=ao" class="hover:underline text-blue-700">here.</a></p>
+                <ol class="list-decimal ml-8 space-y-4 py-10">
+                    <li>
+                        <div class="mb-4">
+                            <b>Pore-scale fluid dynamics resolved in pressure fluctuations at the Darcy scale.</b>
+                            Geophysical Research Letters.<br>
+                            <b>Spurin, C.</b>, Roberts, G. G., O'Malley, C. P. B., Kurotori, T., Krevor, S., Blunt, M. J., and Tchelepi, H. A.
+                            <a class="text-purple-800 hover:underline" href=" https://doi.org/10.1029/2023GL104473">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.22541/essoar.168451036.65869003/v1">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div>
+                            <img src="cwt.png" alt="Modeling framework" class="w-100 h-96">
+                            </div>
+                            <div class="text-center">
+                                This work shows that the underlying pore scale dynamics manifest in the fluctuations in the pressure signal. The power spectra provide
+                                useful information into the dynamics without imaging. <br>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li> 
+                        <div class = "mb-4">
+                            <b> Dynamic Mode Decomposition for Analyzing Dynamics in Multi-phase Flow in Porous Media. </b> 
+                            AWR.<br> <b>Spurin, C.</b>, Berg, S., Armstrong, R. and McClure, J.,
+                            <a class="text-purple-800 hover:underline" href="https://doi.org/10.1016/j.advwatres.2023.104423">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://eartharxiv.org/repository/view/4667/">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div>
+                                <img src="dmd_case_2.png" alt="Modeling framework" class="w-100 h-96">
+                                </div>
+                            <div class="text-center">
+                                DMD is a dimensionality reduction algorithm. In this paper we show that it can be used to highlight dynamics that are difficult to capture with
+                                the naked eye. 
+                            </div>
+                        </div>
+                    </li>
+                     
+                    
+
+                    <li>
+                        <div class="mb-4">
+                            <b>Mechanisms controlling fluid breakup and reconnection during two-phase flow in porous media.</b>
+                            Physical Review E.<br>
+                            <b>Spurin, C.</b>, Bultreys, T., Bijeljic, B., Blunt, M.J. and Krevor, S.,
+                            <a class="text-purple-800 hover:underline" href="https://doi.org/10.1103/PhysRevE.100.043115">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.31223/osf.io/nm362">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div>
+                            <img src="1st_paper_graphic.png" alt="Mechanisms controlling intermittency" class="w-100 h-96">
+                            </div>
+                            <div class="text-center">
+                                This work explores the controlling mechanisms for fluid breakup and reconnection. We show that the Capillary number (Ca) and 
+                                viscosity ratio (M) can be used to characterize the flow regime expected.
+                                We show that, for CO<sub class="subscript">2</sub> storage, intermittent flow pathways will be present. These pore-scale dynamics 
+                                must be incorporated into large-scale reservoir models to accurately capture the movement and trapping of CO<sub class="subscript">2</sub> in 
+                                the subsurface.
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="mb-4">
+                            <b>Intermittent fluid connectivity during two-phase flow in a heterogeneous carbonate rock.</b>
+                            Physical Review E.<br>
+                            <b>Spurin, C.</b>, Bultreys, T., Bijeljic, B., Blunt, M.J. and Krevor, S.,
+                            <a class="text-purple-800 hover:underline" href="https://doi.org/10.1103/PhysRevE.100.043103">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.31223/osf.io/s5ewp">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div id="player" style="width: 500; height: 400;"></div>
+                            <div class="text-center">
+                                We observe that intermittent pathways heavily influence the connectivity of the gas. This is because intermittent flow connections 
+                                are more likely in regions in the pore space where the gas phase is poorly connected, or the pore space itself is poorly connected. 
+                                Intermittent pathways connect regions of gas that are otherwise disconnected from the main flow pathway across the core.
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li> 
+                        <div class = "mb-4">
+                            <b> Real-time imaging reveals distinct pore scale dynamics during transient and equilibrium subsurface multiphase flow. </b> 
+                            WRR.<br> <b>Spurin, C.</b>, Bultreys, T., Rücker, M., Garfi, G., Schlepütz, C.M., Novak, V., Berg, S.,
+                            Blunt, M.J. and Krevor, S.,
+                            <a class="text-purple-800 hover:underline" href="https://doi.org/10.1029/2020WR028287">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.31223/osf.io/s5ewp">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <img src="ss_uss_paper.jpg" alt="Modeling framework" class="w-100 h-96">
+                        </div>
+                            <div class="text-center">                                
+                            In this paper we show how transient dynamics are distinct to steady-state dynamics. 
+                            To accurately capture the movement of CO<sub class="subscript">2</sub> in the subsurface
+                            we must include transient dynamics in our large scale models. 
+                        </div>
+                    </li>
+
+                    <li> 
+                        <div class = "mb-4">
+                            <b> The development of intermittent multiphase fluid flow pathways through a porous rock. </b> 
+                            AWR.<br> <b>Spurin, C.</b>, Bultreys, T., Rücker, M., Garfi, G., Schlepütz, C.M., Novak, V., Berg, S.,
+                            Blunt, M.J. and Krevor, S.,
+                            <a class="text-purple-800 hover:underline" href="https://doi.org/10.1016/j.advwatres.2021.103868">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.31223/osf.io/s5ewp">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <img src="development_paper.png" alt="Modeling framework" class="w-80 h-60">
+                        </div>
+                        <div class="text-center">  
+                        Intermittent pathways allow for more efficient propagation of fluids. 
+                        </div>
+                    </li>
+
+                    <li> 
+                        <div class = "mb-4">
+                            <b> Red Noise in Steady-State Multiphase Flow in Porous Media. </b> 
+                            WRR.<br> <b>Spurin, C.</b>, Rücker, M., Moura, M., Bultreys, T., Garfi, G., Berg, S., Blunt, M.J. and
+                            Krevor, S.,
+                            <a class="text-purple-800 hover:underline" href=" https://doi.org/10.1029/2022WR031947">[Paper]</a>
+                            <a class="text-blue-800 hover:underline" href="https://doi.org/10.31223/osf.io/s5ewp">[Arxiv]</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4">
+                            <img src="red_noise.png" alt="Modeling framework" class="w-96 h-80">
+                            <div>
+                                We transform the pressure data into the frequency domain using Fourier transformation.
+                                We observe that red noise (black dashed line in figure) is present for intermittent pathway flow during multiphase flow. 
+                            </div>
+                        </div>
+                    </li>   
+
+                </ol>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="m-10 max-w-5xl">
+            <h1 class="font-bold text-2xl">Miscellaneous</h1> <br>
+            <p>I am on the committee for the Porous Media Tea Time Talks. These are a series of YouTube webinars that give Early Career Researchers the chance to showcase their work.
+                <a href="https://www.youtube.com/@PorousMediaTTT" class="hover:underline text-blue-700">Subsrcibe to our channel and check out the talks!</a></p>
+            <div class="w-80 h-80 shadow-lg"><img src="pmttt_logo.jpeg" class="w-full h-full rounded-lg"> </div> <br>
+            <p>I developed a workflow to segment multiphase images. The workflow for this is available <a href="https://github.com/cspurin/image_processing" class="hover:underline text-blue-700">here</a>: </p><br>
+            <div class="flex space-x-4">
+                <img src="watershed_segmentation.PNG" alt="Image segmentation" class="w-100 h-96">
+            <div>
+        </div>
+    </div>
+
+
+
 </body>
 
+
 <!-- custom cursor -->
+ 
 <script>
     var customCursor = document.getElementById('custom-cursor');
 
@@ -124,5 +331,31 @@
         customCursor.style.top = y + 'px';
     });
 </script>
+
+<!-- Auto play of a video 1 -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '2000',
+            videoId: 'h-wduQ552io',
+            playerVars: {
+                autoplay: 6,
+                mute: 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo(); // This will attempt to start the video
+    }
+</script>
+
 
 </html>
