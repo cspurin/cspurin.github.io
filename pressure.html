@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Check if user is logged in
+        window.onload = function() {
+            if (localStorage.getItem("loggedIn") !== "true") {
+                // If not logged in, redirect to the login page
+                window.location.href = "login.html";
+            }
+        };
+
+        // Logout function to clear login state
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+
+</html>

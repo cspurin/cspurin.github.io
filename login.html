@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "CRC3") { // Change "CRC3" to your desired password
+                document.getElementById("protectedContent").style.display = "block";
+                document.getElementById("loginForm").style.display = "none";
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Login</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="protectedContent" style="display: none;">
+        <h1>Pressure plot for a single gauge</h1>
+        <img src="pressure_plot.png" alt="Pressure Plot">
+        <br>
+    </div>
+</body>
+</html>
