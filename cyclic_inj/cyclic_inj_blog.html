@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Impact of cyclic CO₂ injection on residual trapping</title>
+    
     <style>
         .centered-text {
             text-align: center;
         }
         
         .title-section {
-        text-align: center;
+            text-align: center;
         }
 
         body {
             font-family: Georgia, serif;
-            line-height: 1.6;
-            margin: 2rem;
-            max-width: 800px;
+            line-height: 1.8;
+            margin: 0; /* Remove body margin */
+            padding: 0; /* Remove body padding */
+            background-color: rgb(255, 255, 255); 
+            color: rgb(51 65 85); /* text-slate-700 equivalent */
         }
+        
+        .content-container {
+            max-width: 800px;
+            margin: 2rem auto; /* Center the content with auto margins */
+            padding: 0 1rem; /* Add some padding on smaller screens */
+        }
+        
         h1, h2, h3 {
             color: #333;
         }
+    
         figure {
             margin: 2em 0;
         }
+        
         figcaption {
             font-style: italic;
             font-size: 0.9em;
         }
+        
         code {
             background-color: #eee;
             padding: 0.2em 0.4em;
             border-radius: 4px;
         }
+        
+        /* Fix the navbar styling */
+        .navbar {
+            width: 100%;
+            background-color: rgb(107 33 168); /* bg-purple-800 equivalent */
+            color: white;
+            font-size: 1.125rem; /* text-lg equivalent */
+        }
     </style>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-VXFSCXBT0Z');
+    </script>
 </head>
-<body>
 
-<h1 class="centered-text">Exploring underlying pore-scale dynamics with pressure data spectra: Impact of cyclic CO₂ injection on residual trapping</h1>
+<body>
+    <!-- Full-width navbar -->
+    <div class="navbar">
+        <div class="max-w-screen-xl mx-auto">
+            <button class="p-4 hover:bg-purple-600" onclick="window.location.href='../index.html'">
+                Home
+            </button>
+            <button class="p-4 hover:bg-purple-600" onclick="window.location.href='../publications.html'">
+                Publications
+            </button>
+            <button class="p-4 hover:bg-purple-600" onclick="window.location.href='../cv.html'">
+                CV
+            </button>
+            <button class="p-4 bg-purple-600 hover:bg-purple-600" onclick="window.location.href='cyclic_inj_blog.html'">
+                Blog posts
+            </button>
+        </div>
+    </div>
+
+    <!-- Centered content container -->
+    <div class="content-container">
+
+<h1 class="centered-text"><strong>Exploring underlying pore-scale dynamics with the pressure data: Impact of cyclic CO₂ injection on residual trapping</strong></h1>
 
 <p class="centered-text"> <strong>Written by:</strong> Catherine Spurin</p>
 
@@ -64,12 +114,17 @@
                 </li>
                 <li>
                     <a href="#Conclusions-and-Outlook" aria-label="Conclusions and Outlook">Conclusions and Outlook</a>
+                    
                 </li>
+                <li>
+                    <a href="#data" aria-label="data">Data Availability</a>
+                </li>
+
                 <li>
                     <a href="#citation" aria-label="Citation">Citation</a>
                 </li>
                 <li>
-                    <a href="#references" aria-label="References">References</a>
+                    <a href="#references" aria-label="references">References</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +133,8 @@
 
 
 <section>
-    <h2>Introduction</h2>
+    <h2 id="Introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#Introduction">#</a></h2>
+
     <p>
         The storage of CO₂ in underground saline aquifers will be integral in reducing anthropogenic emissions, and meeting the targets laid out by the 2015 Paris agreement <a href="#ref-bui2018carbon">[1]</a>, <a href="#ref-benson2008co2">[2]</a>. Finding ways to improve trapping in the subsurface, and minimizing CO₂ plume spread will be important in CCS (carbon capture and storage) projects as this improves storage security and reduces costs <a href="#ref-benson2018geocquest">[3]</a>.
     </p>
@@ -86,7 +142,7 @@
         Cyclic injection (where repeated cycles of CO₂ and water are injected into the subsurface) may improve residual trapping, which will improve the storage security of CO₂ <a href="#ref-krevor2015capillary">[4]</a>. As a result, it has received interest from members of the scientific community <a href="#ref-edlmann2019cyclic">[5]</a>, <a href="#ref-herring2016enhancing">[6]</a>, <a href="#ref-thanh2020robust">[7]</a>. With repeated cycles of alternating CO₂ and water injection, the CO₂ has been observed to break apart into smaller clusters that are trapped in the pore space of the rock <a href="#ref-herring2016enhancing">[6]</a>.
     </p>
     <p>
-        Imaging experiments that allow us to observe residually trapped CO₂ in the pore space are time consuming, expensive, and limit sample size <a href="#ref-elkhoury2019resolution">[8]</a>, <a href="#ref-bazaikin2017effect">[9]</a>. In contrast, if we are able to infer the underlying pore-scale dynamics from pressure data, then we will be able to collect more data on more samples in a given time frame, and explore residually trapping in larger cores, with different heterogeneities.
+        Imaging experiments that have allowed observe residually trapped CO₂ to be observed in the pore space directly are time consuming, expensive, and sample size is limited <a href="#ref-elkhoury2019resolution">[8]</a>, <a href="#ref-bazaikin2017effect">[9]</a>. In contrast, if we are able to infer the underlying pore-scale dynamics from pressure data, then we will be able to collect more data on more samples in a given time frame, and explore residually trapping in larger cores, with different heterogeneities.
     </p>
     <p>
         In this work, we highlight how underlying pore-scale dynamics can be inferred from the spectral power of pressure measurements taken during core-scale experiments using continuous wavelet transformation (CWT). Using the method described in <a href="#ref-spurin2023cwt">[10]</a>, we explore pressure data collected by <a href="#ref-edlmann2019cyclic">[5]</a>, and compare it to pore-scale observations made by <a href="#ref-herring2016enhancing">[6]</a>. We highlight the importance of the evolution of the spectral signal in the pressure data, and emphasise that information about fluid dynamical evolution of flow in core is lost in averaging the pressure data in time.
@@ -94,7 +150,8 @@
 </section>
 
 <section>
-    <h2>Core-scale Results</h2>
+    <h2 id="Core-scale-results">Core-scale Results<a hidden class="anchor" aria-hidden="true" href="#Core-scale-results">#</a></h2>
+
     <p>
         The core-scale experiment assessed in this paper was conducted by <a href="#ref-edlmann2019cyclic">[5]</a> on a cylindrical Fell sandstone sample, 38 mm in diameter and 80 mm in length. In total, 6 cycles of water injection, followed by scCO₂ (super critical CO₂) injection, were performed, with the flow rate kept constant at 1 ml/min. The pressure data from this experiment is shown in <strong>Figure 1</strong>. Edlmann et al. (2019) concluded that cyclic injection promoted residual trapping, shown by the differential pressure increasing with cycle number (most notable between panels 2 and 3 in <strong>Figure 1</strong>, i.e., the difference between differential pressure during water injection during cycle 1 and cycle 2). However, the underlying pore-scale dynamics that cause the increase in trapping were not known.
           
@@ -106,7 +163,7 @@
     </figure>
 
         <p>
-            We can use continuous wavelet transformation to explore the underlying pore-scale dynamics <a href="#ref-spurin2023cwt">Spurin et al., 2023</a>. The spectral power of the pressure data for the full experiment is shown in <strong>Figure 2a</strong>. The pressure data was then split into periods of CO<sub>2</sub> injection and periods of water injection (identified by <a href="#ref-edlmann2019cyclic">Edlmann et al., 2019</a> and indicated by the panels in <strong>Figure 1</strong>). The spectral power for the split pressure signal is shown in <strong>Figure 2b</strong> for the periods of CO<sub>2</sub> injection and <strong>Figure 2c</strong> for the periods of water injection.
+            We can use continuous wavelet transformation to explore the underlying pore-scale dynamics (<a href="#ref-spurin2023cwt">Spurin et al., 2023</a>). The spectral power of the pressure data for the full experiment is shown in <strong>Figure 2a</strong>. The pressure data was then split into periods of CO<sub>2</sub> injection and periods of water injection (identified by <a href="#ref-edlmann2019cyclic">Edlmann et al., 2019</a> and indicated by the panels in <strong>Figure 1</strong>). The spectral power for the split pressure signal is shown in <strong>Figure 2b</strong> for the periods of CO<sub>2</sub> injection and <strong>Figure 2c</strong> for the periods of water injection.
           </p>
 
     <figure>
@@ -119,16 +176,16 @@
     </p>
          
     <p>
-            The time-averaged wavelet power spectra is shown in <strong>Figure 3</strong>. This is equivalent to the Fourier transform of the pressure data. The calculated spectra are broadly consistent with red noise for both CO<sub>2</sub> injection and water injection, similar to other pore-scale observations <a href="#ref-spurin2022red">Spurin et al., 2022</a>. The evolution from early cycles to later cycles is subtle, with shorter frequencies (longer periods) decreasing in amplitude for water injection, and increasing for CO<sub>2</sub> injection (same observations as <strong>Figure 2b–c</strong>). This highlights that the evolution in connectivity due to cyclic injection is subtle.
+            The time-averaged wavelet power spectra is shown in <strong>Figure 3</strong>. This is equivalent to the Fourier transform of the pressure data. The calculated spectra are broadly consistent with red noise for both CO<sub>2</sub> injection and water injection, similar to other pore-scale observations (<a href="#ref-spurin2022red">Spurin et al., 2022</a>). The evolution from early cycles to later cycles is subtle, with shorter frequencies (longer periods) decreasing in amplitude for water injection, and increasing for CO<sub>2</sub> injection (same observations as <strong>Figure 2b–c</strong>). This highlights that the evolution in connectivity due to cyclic injection is subtle.
           
     </p>
 
     <p>
-        In previous work, event frequency during steady-state flow correlated to event size, with larger events occurring over longer periods <cite>Spurin et al., 2022</cite>. Assuming the same dynamics in these experiments (as we also observe red noise), the increase in power at the longer timescales during CO<sub>2</sub> injection suggests that larger events are becoming more important in determining pressure fluctuations. We hypothesize this would be related to more gas in the system, or larger ganglia of gas becoming mobile.
+        In previous work, event frequency during steady-state flow correlated to event size, with larger events occurring over longer periods (<a href="#ref-spurin2022red">Spurin et al., 2022</a>). Assuming the same dynamics in these experiments (as we also observe red noise), the increase in power at the longer timescales during CO<sub>2</sub> injection suggests that larger events are becoming more important in determining pressure fluctuations. We hypothesize this would be related to more gas in the system, or larger ganglia of gas becoming mobile.
       </p>
       
       <p>
-        Conversely, the decrease in spectral power during cyclic water injection suggests that larger events are becoming less important. This could be smaller ganglia forming, or water being forced out the core. These observations agree with the conclusions reached by <cite>Edlmann et al., 2019</cite>, where cyclic injection led to more CO<sub>2</sub> trapping.
+        Conversely, the decrease in spectral power during cyclic water injection suggests that larger events are becoming less important. This could be smaller ganglia forming, or water being forced out the core. These observations agree with the conclusions reached by <a href="#ref-edlmann2019cyclic">[5]</a>, where cyclic injection led to more CO<sub>2</sub> trapping.
       </p>
       
 
@@ -139,9 +196,11 @@
 </section>
 
 <section>
-    <h2>Comparison to Pore-scale Results</h2>
+    <h2 id="Pore-scale-results">Comparison to Pore-scale Results<a hidden class="anchor" aria-hidden="true" href="#Pore-scale-results">#</a></h2>
+
+    
     <p>
-        The pore-scale experiment was conducted on a cylindrical Bentheimer sandstone sample, 6.1 mm in diameter and ~40 mm in length. This sample is approximately 1% of the total volume of the core-scale experiment. For this experiment, the fluid interfaces could be resolved directly. A full description is provided in <cite>Herring et al., 2016</cite>.
+        The pore-scale experiment was conducted on a cylindrical Bentheimer sandstone sample, 6.1 mm in diameter and ~40 mm in length. This sample is approximately 1% of the total volume of the core-scale experiment. For this experiment, the fluid interfaces could be resolved directly. A full description is provided in <a href="#ref-herring2016enhancing">[6]</a>.
       </p>
       
     <figure>
@@ -160,7 +219,7 @@
 </section>
 
 <section>
-    <h2>Conclusions and Outlook</h2>
+    <h2 id="Conclusions-and-Outlook">Conclusions and Outlook<a hidden class="anchor" aria-hidden="true" href="#Conclusions-and-Outlook">#</a></h2>
     <p>
         In this work the underlying pore scale dynamis were inferred from the pressure data for core-scale experiments.
         When compared to the pore-scale results (where dynamics may have change, due to scale), we see that our inferences are supported. 
@@ -168,7 +227,7 @@
         in the system. 
 
         Using continuous wavelet transformations to explore the spectral content of the pressure data 
-        is useful in assessing the role of cyclic CO$_2$ injection in improving residual trapping. 
+        is useful in assessing the role of cyclic CO<sub>2</sub> injection in improving residual trapping. 
         Future work exploring the presence of this signal in other cores, and at the field scale would be of interest. 
         To have the pressure data for pore-scale observations, and match it to the dynamics in the pore-scale would 
         be of use for future upscaling work. 
@@ -176,12 +235,14 @@
 </section>
 
 <section>
-    <h2>Data Availability</h2>
+    <h2 id="data">Data Availability<a hidden class="anchor" aria-hidden="true" href="#data">#</a></h2>
+
     <p>
         The code is available here: <a href="https://github.com/cspurin/continuous_wavelets" target="_blank">https://github.com/cspurin/continuous_wavelets</a>
     </p>
 </section>
 
+<section>
 <h2 id="citation">Citation<a hidden class="anchor" aria-hidden="true" href="#citation">#</a></h2>
 <p>Cited as:</p>
 <blockquote>
@@ -196,9 +257,10 @@
   month   = &#34;April&#34;,
   url     = &#34;https://cspurin.github.io/cyclic_inj/cyclic_inj_blog/&#34;
 }
+</section>
 
 <section>
-    <h2> References</h2>
+    <h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
     <ol>
       <li>M. Bui, C. S. Adjiman, A. Bardow, E. J. Anthony, A. Boston, S. Brown, P. S. Fennell, S. Fuss, A. Galindo, L. A. Hackett, et al., <i>Energy & Environmental Science</i> <b>11</b>, 1062 (2018).</li>
       <li>S. M. Benson and D. R. Cole, <i>Elements</i> <b>4</b>, 325 (2008).</li>
