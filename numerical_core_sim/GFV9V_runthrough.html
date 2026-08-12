@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Core scale simulations</title>
+    <title>Impact of cyclic CO₂ injection on residual trapping</title>
     
     <style>
         pre {
@@ -48,10 +48,6 @@
             margin: 2em 0;
         }
         
-        .figure-row {
-            display: flex;
-            gap: 24px;
-        }
         figcaption {
             font-style: italic;
             font-size: 0.9em;
@@ -62,13 +58,6 @@
             padding: 0.2em 0.4em;
             border-radius: 4px;
         }
-          figure img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
         
         /* Fix the navbar styling */
         .navbar {
@@ -76,29 +65,6 @@
             background-color: rgb(107 33 168); /* bg-purple-800 equivalent */
             color: white;
             font-size: 1.125rem; /* text-lg equivalent */
-        }
-
-        .example {
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-
-        .example-title {
-            font-weight: bold;
-            margin-bottom: 12px;
-            font-size: 1.05em;
-        }
-
-        .example-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* slice | scatter */
-            column-gap: 24px;
-        }
-
-        .example-grid img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
         }
 
     </style>
@@ -207,12 +173,7 @@
         projects as this improves storage security and reduces costs <a href="#ref-benson2018geocquest">[3]</a>.
     </p>
 
-    <p>Extreme channelling of CO₂ has been observed in core-scale experiments. The question is: what does it take to fully capture 
-        highly heterogeneous flow patterns in numerical simulations?
-    </p>
-
-    <p>This page serves as my documentation of learning to perform numerical simulations on the samples from the Otway International 
-        Test Centre.</p>
+    <p>This page serves as my documentation of learning to perform numerical simulations.</p>
 
 </section>
 
@@ -314,15 +275,14 @@
     <h2 id="initial-results">1. Initial results<a hidden class="anchor" aria-hidden="true" href="#initial-results">#</a></h2>
     
     <p> The results for the simulation without capillary pressure heterogeneity are shown in Figure 6 and 7. The saturation is poorly 
-        predicted and the results are essentially useless. This is likely due to extreme channelling observed in these experiments, even 
-        when variations in porosity are not extreme. 
+        predicted and the results are useless. 
     </p>
 
     <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
     <figure style="text-align: center; flex: 1;">
       <img src="initial_run.png" alt="comparison of saturation values" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
       <figcaption>Figure 6. Experimental saturation voxel values versus simulation saturation voxel values. 
-        The red dashed line is the 1:1 line i.e. a perfect fit.</figcaption>
+        The red dashed line is the 1:1 i.e. a perfect fit.</figcaption>
     </figure>
 
     <figure style="text-align: center; flex: 1;">
@@ -390,7 +350,7 @@
     </div>
 
     <p>Note there are different methods to perform the optimization. These might yield different results. 
-        I am optimizing using gradient descent because this is computationally efficient.
+        I am optimizing using gradient descent.
     </p>
       
 </section>
@@ -407,12 +367,7 @@
     </p>
 
     <p>The permeability of the voxel is related to the core averaged permeability using the ratio of the porosity of the voxel 
-        to the core averaged porosity and the \(\kappa\) value for that voxel. This assumes the Leverett J scaling is valid. Figure 10 shows the
-        correlation between experimental saturation and simulation saturation values with just capillary pressure heterogeneity. Figure 11 shows
-        the correlation between experimental and simulation saturation values for capillary pressure heterogeneity and permeability heterogeneity. 
-        On the first iteration, the inclusion of permeability heterogeneity reduces the R value used to quantify the correlation between the
-        simulation and experiment. Iterating on the capillary pressure heterogeneity with the results from the combined simulation is discussed 
-        in the next section.
+        to the core averaged porosity and the \(\kappa\) value for that voxel. This assumes the Leverett J scaling is valid. 
     </p>
       
 </section>
@@ -482,13 +437,13 @@
         <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
     <figure style="text-align: center; flex: 1;">
         <img src="exp4/final.png" alt="final" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 15a. Permeability heterogeneity exaggerated based on CO₂ saturation and pressure drop 
+        <figcaption>Figure 15. Permeability heterogeneity exaggerated based on CO₂ saturation and pressure drop 
             across the core at 100% water flow.</figcaption>
     </figure>
 
     <figure style="text-align: center; flex: 1;">
         <img src="exp4/final_1sthalf.png" alt="final first half" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 15b. Permeability heterogeneity exaggerated based on CO₂ saturation and pressure drop 
+        <figcaption>Figure 15. Permeability heterogeneity exaggerated based on CO₂ saturation and pressure drop 
             across the core at 100% water flow for first half of the core.</figcaption>
     </figure>
     </div>
@@ -504,192 +459,20 @@
 
 <section>
     <h2 id="relperm">5. Playing with relative permeability<a hidden class="anchor" aria-hidden="true" href="#relperm">#</a></h2>
-    <p>The relative permeability influences dynamics. The characteristic relative permeability curve might be different to the intrinsic 
-        relative permeability curve.
-        In Figure 16 we plot the input relative permeability (solid lines, no markers) alongside the simulation and experimental values. 
-        For the simulation data shown in Figure 15, there is a good match with the experimental data. The water
-        relative permeability curves are similar, although the saturation range is slightly larger for the simulation. The CO₂ relative 
-        permeability curve is steeper for the experiment and, again, the saturation range is narrower compared to the simulation. 
-        
-    </p>
-        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
-    <figure style="text-align: center; flex: 1;">
-        <img src="exp4/rel_perm.png" alt="rel_perm" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 16. Relative permeability of the simulation versus the experiment. The solid lines denote the 
-            input relative permeability curve. </figcaption>
-    </figure>
-    </div>
+    <p>The relative permeability influences dynamics. The input relative permeability curve might be different from the experimental one.</p>
 </section>
 
 <section>
-    <h2 id="Pore-scale-results">6. What is needed to capture these highly heterogeneous cores<a hidden class="anchor" aria-hidden="true" href="#Pore-scale-results">#</a></h2>
-    <p>To capture the dynamics in these highly heterogeneous cores, we had to include capillary pressure heterogeneity, permeability 
-        heterogeneity and we had to manipulate the permeability heterogeneity from the initial scaling chosen. With these additions, we are able 
-        to capture a reasonable proption of the experiments. When optimizing for a single experiment, the correlation gets worse for the 
-        experiments further away. This means that there is some instability in the extrapolation of the capillary pressure heterogeneity
-        and permeability heterogeneity. The rapid increase in CO₂ relative permeability is also not captured. 
-
-    </p>
-    <p>The pressure matches the pressure drop across the core. However, we have manipulated the permeability. 
-        The average permeability for the core (this does include the inlet and outlet slices) is 450mD. This is signficantly higher than 
-        the measured permeability of the core. 
-    </p>
-
-    <p>NB if we use our knowledge from the Ghent experiments, we know that the connectivity improves significantly for small increases in 
-        CO₂ saturation. This increase in CO₂ connectivity might not be captured by the simulations. 
-    </p>
-      
-</section>
-
-
-<section>
-    <h2 id="scale">7. High resolution vs low resolution <a hidden class="anchor" aria-hidden="true" href="#scale">#</a></h2>
-    <p>The simulations presented prior to this section were 14 x 14 x 74. We compare this to a finer grid (same rock). The grid for 
-        the finer model is 57 x 57 x 80. The number of voxels goes from 14,504 to 259,920; this is an increase of ~ x 18. The coarser simulations
-        run in a couple of minutes, while the finer grid takes 14 hours (it is not proportional to the number of voxels). The large increase in 
-        time is proabably due to extreme variations in heterogeneity for neighbouring cells. In comparison, Michael Krause had 14, 976 for his 
-        simulations.
-    </p>
-    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
-
-    <figure style="text-align: center; flex: 1;">
-        <img src="exp4/pc_het.png" alt="pc_perm_het" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 17. Optimization of f<sub>w</sub> = 0.05 with capillary pressure heterogeneity for coarse grid.</figcaption>
-    </figure>
-
-    <figure style="text-align: center; flex: 1;">
-        <img src="exp4/pc_het_coarse4.png" alt="pc_perm_het_it2" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 18. Optimization of f<sub>w</sub> = 0.05 with capillary pressure heterogeneity for fine grid.</figcaption>
-    </figure>
-    </div>
-
-    <p> A single slice for the simulation and the experiment is shown in Figure 20. Similarly to the coarse grid, it is the low saturations 
-        that are overpredicted i.e. the chanelling isn't as extreme in the simulation compared to the experiment. The simulation with 
-        permeability heterogeneity broke so this section is tbc. 
-    </p>
-    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
-    <figure style="text-align: center; flex: 1;">
-        <img src="pc_het_slice_coarse4_slice.png" alt="slice_coarse4" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 19. The saturation across a single slice in the direction of flow for the simulation 
-            and the experiment. The porosity for the slice is also shown. </figcaption>
-    </figure>
-    </div>
+    <h2 id="Pore-scale-results">What is needed to capture these highly heterogeneous cores<a hidden class="anchor" aria-hidden="true" href="#Pore-scale-results">#</a></h2>
 
       
-</section>
-
-<section>
-    <h2 id="Conclusions-and-Outlook">The importance of the capillary pressure curve<a hidden class="anchor" aria-hidden="true" href="#Conclusions-and-Outlook">#</a></h2>
-    <p>The capillary pressure curve shown in Figure 5 is typical for a highly heterogeneous core. The λ value for the fitted curve was 0.52, 
-        while cores with a homogeneous pore size distribution will have a λ value of ~ 2. If we change λ value to 2, we get Figure 20.
-        When using the incorrect capillary pressure curve, the CO2 saturation is overpredicted. </p>
-            <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin-top: 1.5em;">
-        <figure style="text-align: center; flex: 1;">
-        <img src="exp4/final_homoPc.png" alt="slice_coarse4" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <figcaption>Figure 20. Using a flatter (more homogenous) capillary pressure curve in the simulation. </figcaption>
-    </figure>
-    </div>
 </section>
 
 <section>
     <h2 id="Conclusions-and-Outlook">Conclusions and Outlook<a hidden class="anchor" aria-hidden="true" href="#Conclusions-and-Outlook">#</a></h2>
-    <p> With history matching, we are able to capture the saturation distributions in these highly heterogeneous cores.
-        This is useful for simulating vertical relative permeability, and for populating the relative permeability curve to higher saturations. 
-        We found limited predictive capability between cores for these highly heterogeneous samples. 
-    </p>
-</section>
-
-<section>
-    <h2 id="GFV14">Applying the same work flow to another core<a hidden class="anchor" aria-hidden="true" href="#GFV14">#</a></h2>
-    <p> The samples taken Otway International Test Centre are highly heterogeneous, and no two multiphase experiments looked the same, even for samples from the 
-        same facies, or extracted from similar depths. Can the samples be captured with the same workflow? Or is the heterogeneity too extreme? 
-        For this section we will look at GFV14, as this sample also had CO2 travelling along thin laminations. 
-    </p>
-
-
-
-        <!-- Pc heterogeneous -->
-        <div class="example">
-            <div class="figure-row">
-
-            <figure>
-                <img src="GFV14/pc_het_slice.png" alt="Pc heterogeneous slice">
-                <figcaption>Simulation with capillary pressure heterogeneity included.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="GFV14/pc_het.png" alt="Pc heterogeneous scatter">
-                <figcaption>Comparison between simulation and experimental voxels (optimization done for red points).</figcaption>
-            </figure>
-
-            </div>
-        </div>
-
-        <!-- Permeability x10 -->
-        <div class="example">
-            <div class="figure-row">
-
-            <figure>
-                <img src="GFV14/perm_het_x10_slice.png" alt="Perm x10 slice">
-                <figcaption>Simulation with permeability heterogeneity (exaggerated ×10).</figcaption>
-            </figure>
-
-            <figure>
-                <img src="GFV14/perm_het_x10.png" alt="Perm x10 scatter">
-                <figcaption>Comparison between simulation and experimental voxels (optimization done for red points).</figcaption>
-            </figure>
-
-            </div>
-        </div>
-
-        <!-- Permeability x100 -->
-        <div class="example">
-            <div class="figure-row">
-
-            <figure>
-                <img src="GFV14/perm_het_x100_slice.png" alt="Perm x100 slice">
-                <figcaption>Simulation with permeability heterogeneity (exaggerated ×100).</figcaption>
-            </figure>
-
-            <figure>
-                <img src="GFV14/perm_het_x100.png" alt="Perm x100 scatter">
-                <figcaption>Comparison between simulation and experimental voxels (optimization done for red points).</figcaption>
-            </figure>
-
-            </div>
-        </div>
-
-        <!-- Permeability x1000 -->
-        <div class="example">
-            <div class="figure-row">
-
-            <figure>
-                <img src="GFV14/perm_het_x1000_slice.png" alt="Perm x1000 slice">
-                <figcaption>Simulation with permeability heterogeneity (exaggerated ×1000).</figcaption>
-            </figure>
-
-            <figure>
-                <img src="GFV14/perm_het_x1000.png" alt="Perm x1000 scatter">
-                <figcaption>Comparison between simulation and experimental voxels (optimization done for red points).</figcaption>
-            </figure>
-
-            </div>
-        </div>
-
-        <figure style="text-align: center; max-width: 700px; margin: 48px auto;">
-    <img
-        src="GFV14/pc_GFV14.png"
-        alt="Capillary pressure curve for the GFV14 sample"
-        style="max-width: 100%; height: auto; border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-
-    <figcaption>
-        Capillary pressure curve for GFV14. The core is highly heterogeneous, and might be better captured with two capillary pressure curves.
-    </figcaption>
-    </figure>
-
 
 </section>
+
 
 
 <section>
